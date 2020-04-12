@@ -1,5 +1,5 @@
 const covid19ImpactEstimator = (data) => {
-//input to the estimator function
+// input to the estimator function
 const input = data
 input = {
     region:{
@@ -14,7 +14,7 @@ input = {
     population: 66622705,
     totalHospitalBeds: 1380614
 }
-//output from the estimator function
+// output from the estimator function
 return {
     data: input,
     impact: {},
