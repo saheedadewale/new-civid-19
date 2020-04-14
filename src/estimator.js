@@ -1,11 +1,15 @@
 const covid19ImpactEstimator = (data) => {
   let myFactor;
+  let myTime;
   if (data.periodType === 'days') {
     myFactor = Math.trunc(data.timeToElapse / 3);
+    myTime = data.timeToElapse;
   } else if (data.periodType === 'weeks') {
     myFactor = Math.trunc((data.timeToElapse * 7) / 3);
+    myTime = data.timeToElapse * 7;
   } else if (data.periodType === 'months') {
     myFactor = Math.trunc((data.timeToElapse * 30) / 3);
+    myTime = data.timeToElapse * 30;
   }
   const impact = {
     currentlyInfected: data.reportedCases * 10
@@ -36,7 +40,7 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.casesForVentilatorsByRequestedTime = Math.trunc(severeV);
   const Pop = data.region.avgDailyIncomePopulation;
   const Inc = data.region.avgDailyIncomeInUSD;
-  const period = data.timeToElapse;
+  const period = myTime;
   const imDol = Math.trunc((impact.infectionsByRequestedTime * Pop * Inc) / period);
   const sDol = Math.trunc((severeImpact.infectionsByRequestedTime * Pop * Inc) / period);
   impact.dollarsInFlight = imDol;
