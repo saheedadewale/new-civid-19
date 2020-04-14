@@ -6,15 +6,68 @@
     <meta name="keyword" content="covid-19">
     <meta name="description" content="Application that estimate covid-19 econmic lost">
     <title>COVID-19 App</title>
+    <!--Adding bootstrap file-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+                integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+                crossorigin="anonymous">
 </head>
 <body>
     <header>
         <h2>COVID-19 Estimator</h2>
     </header>
     <section>
-        <div class="form-group">
-            
-        </div>
+       <div class="row justify-content-center">
+           <div class="col-lg-5">
+            <div class="form-group">
+                <input type="number" 
+                       class="form-control" 
+                       placeholder="Population"
+                       data-population="population"
+                       id="population"
+                       name="population">
+            </div>
+            <div class="form-group">
+                <input type="number" 
+                       class="form-control" 
+                       placeholder="Time to Elapse"
+                       data-time-to-elapse="timeToElapse"
+                       name="timeToElapse"
+                       id="timeToElapse">
+            </div>
+            <div class="form-group">
+                <input type="number" 
+                       class="form-control" 
+                       placeholder="Reported Cases"
+                       data-reported-cases="reportedCases"
+                       name="reportedCases"
+                       id="reportedCases">
+            </div>
+            <div class="form-group">
+                <input type="number" 
+                       class="form-control" 
+                       placeholder="Total Hospital Beds"
+                       data-total-hospital-beds="totalHospitalBeds"
+                       name="totalHospitalBeds"
+                       id="totalHospitalBeds">
+            </div>
+            <div class="form-group">
+                <select name="periodType" 
+                        class="form-control" 
+                        data-period-type="periodType"
+                        id="periodType" >
+                     <option>Select Period Type</option> 
+                     <option>Days</option> 
+                     <option>Weeks</option>
+                     <option>Months</option> 
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success btn-sm" 
+                data-go-estimate="estimate"
+                name="estimate"
+                id="estimate">Estimate</button>
+            </div>
+           </div>
+       </div>
     </section>
     <footer>
         &copy; 2020 Build For SDG
