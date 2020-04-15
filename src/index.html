@@ -10,15 +10,65 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
                 integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
                 crossorigin="anonymous">
+    <style>
+        body{
+            background: url('../images/cov.jpg');
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: cover;
+        }
+        .form-wrapper{
+            width:400px;
+            height: auto;
+            border:1px solid white;
+            margin-left: 100px;
+            background-color: transparent;
+            border-radius: 5px;
+            margin-top: 50px;
+            color: white;
+            font-size: 13px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .title{
+            background-color:rgba(190, 46, 46, 0.9);
+            color: white;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 25px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .title p{
+            font-size: 12px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        @media screen and (max-width: 992px) {
+            .form-wrapper{
+            background-color: rgba(0,0,0,.3);
+        }
+        @media screen and (max-width: 720px) {
+            .form-wrapper{
+            background-color: rgba(0,0,0,.3);
+        }
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h2 class="text-center">COVID-19 Estimator</h2>
+        
     </header>
-    <section>
+    <section class="form-wrapper">
+        <div class="text-center title">COVID-19 Estimator
+            <p>This application is to determine the impact of COVID-19 pandemic
+                on health and econimc system of a selected region
+            </p>
+        </div>
        <div class="row justify-content-center">
-           <div class="col-lg-5">
+           <div class="col-lg-8">
             <div class="form-group">
+                <label for="population">Population</label>
                 <input type="number" 
                        class="form-control" 
                        placeholder="Population"
@@ -27,6 +77,7 @@
                        name="population">
             </div>
             <div class="form-group">
+                <label for="timeToElapse">Time Elapse</label>
                 <input type="number" 
                        class="form-control" 
                        placeholder="Time to Elapse"
@@ -35,6 +86,7 @@
                        id="timeToElapse">
             </div>
             <div class="form-group">
+                <label for="reportedCases">No of Reported Cases</label>
                 <input type="number" 
                        class="form-control" 
                        placeholder="Reported Cases"
@@ -43,6 +95,7 @@
                        id="reportedCases">
             </div>
             <div class="form-group">
+                <label for="totalHospitalBeds">Total Hospital Beds</label>
                 <input type="number" 
                        class="form-control" 
                        placeholder="Total Hospital Beds"
@@ -51,6 +104,7 @@
                        id="totalHospitalBeds">
             </div>
             <div class="form-group">
+                <label for="periodType">Period</label>
                 <select name="periodType" 
                         class="form-control" 
                         data-period-type="periodType"
@@ -59,9 +113,10 @@
                      <option>Days</option> 
                      <option>Weeks</option>
                      <option>Months</option> 
+                </select>
             </div>
             <div class="form-group">
-                <button>Estimate</button>
+                <button class="btn btn-success">Estimate</button>
             </div>
            </div>
        </div>
